@@ -1,5 +1,5 @@
 # gradient-ize
-Tool for creating colorful string, which can be used in Genshin Impact
+Tool for creating colorful unity rich text
 
 ## Installation
 1. Clone the repo
