@@ -25,12 +25,16 @@ interface.on('line', function(line){
         }
         let colorized = [];
         const colorsHsv = gradient.hsv(line.length);
+        let offset = 0;
         for(i = 0; i < line.length; i++){
-            let hex = colorsHsv[i].toHex();
+            if(line[i] === " "){ //TODO: support other space characters?
+                colorized.push(line[i]);
+                offset++;
+                continue;
+            }
+            let hex = colorsHsv[i - offset].toHex();
             colorized.push("<color=#" + hex + ">" + line[i] + "</color>");
         }
         console.log("Result: " + colorized.join(""));
     }
 });
-
-console.log("<color=#")
